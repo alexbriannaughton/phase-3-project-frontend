@@ -1,32 +1,17 @@
-Project pitch:<br>
-Our app is a chore wheel that takes in a list of chores and people and assigns chores to each person. 
+Project Pitch:
+Our app allows the user to review about various christmas decorated homes and upload their own house's decorations.
 
-<br><br>
-User stories:<br>
--I can can create a list of chores (chore wheel table)<br>
--I can add a list of users to the chore wheel<br>
--I can assign chore to each user<br>
--I can set time frame for each user's chore to reassign<br>
--I can see what chore is assigned to me<br>
--I can delete chores from my chore list<br>
--I can add new chores to my chore list <br>
--I can update chores on my chore list<br>
-<br><br>
-Tables<br>
-Task table (belongs to wheel table)<br>
--Name<br>
--Wheel ID<br>
+user stories:
+-I can look through a list of houses with christmas decorations
+-I can add my house to the list
+-I can read through reviews that others have left for a particular house
+-I can leave reviews for houses
+-I can sort through houses based on specific characteristics
 
-<br><br>
-Wheel table (has many tasks and users):<br>
--wheel name<br>
+Tables:
+Reviews, belongs to User and House
+Users, has many Reviews, has many Houses through Reviews
+Houses, has many Reviews, has many Users through reviews
 
-<br>
-Person Table (belongs to a wheel):<br>
--name<br>
--wheel ID<br>
-
-<br>
-Person-Task Table: <br>
--Task ID<br>
--Person ID<br>
+![IMG_9475](https://user-images.githubusercontent.com/109716310/201788843-e54e3101-7e73-4242-9bfd-6a2b202e95ee.jpg)
+![IMG_9474](https://user-images.githubusercontent.com/109716310/201788852-803b66e1-d6ab-4aaa-930e-c82ce4513a13.jpg)
