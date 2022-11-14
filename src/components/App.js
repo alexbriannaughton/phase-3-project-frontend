@@ -1,7 +1,8 @@
 import React from 'react';
-import Homepage from './Homepage'
-import CreateWheel from './CreateWheel'
-import ChoreWheel from './ChoreWheel'
+import Houses from './Houses'
+import AddHouse from './AddHouse'
+import HouseView from './HouseView'
+import AddReview from './AddReview'
 import { Route, Routes } from "react-router-dom"
 
 function App() {
@@ -11,15 +12,19 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Homepage />}
+          element={<Houses />}
         />
         <Route
-          path='/create-the-wheel'
-          element={<CreateWheel />}
+          path='/add-house'
+          element={<AddHouse />}
         />
         <Route
-          path='/chore-wheel'
-          element={<ChoreWheel />}
+          path='/house'
+          element={<HouseView />}
+        />
+        <Route
+          path='/add-review'
+          element={<AddReview />}
         />
 
       </Routes>
