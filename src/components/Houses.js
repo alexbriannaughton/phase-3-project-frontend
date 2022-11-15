@@ -1,6 +1,11 @@
 import React from "react";
 
+
+
 function Houses() {
+//Get houses from backend into a stateful array(fetch request)
+//Map between this component and its child to render each individual house
+
 
     return (
         <div>
