@@ -1,39 +1,46 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Houses from './Houses'
 import AddHouse from './AddHouse'
 import HouseView from './HouseView'
 import AddReview from './AddReview'
 import NavBar from './NavBar'
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, useRouteMatch } from "react-router-dom"
 
 function App() {
-//   const [house, setHouse] = useState('')
 
-//   useEffect(()=>{
-//       fetch('http://localhost:9292/houses')
-//       .then((res)=>res.json())
-//       .then((data)=> setHouse(data))
-//     },[])
+  const [allHouses, setAllHouses] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:9292/houses")
+      .then((res) => res.json())
+      .then((data) => setAllHouses(data));
+  }, []);
+
   return (
     <div className="App">
       <NavBar/>
       <Routes>
         <Route
-          path="/"
-          element={<Houses />}
+          path="/houses"
+          element={<Houses allHouses={allHouses} />}
         />
         <Route
           path='/add-house'
           element={<AddHouse />}
         />
         <Route
-          path='/house'
+          path='/houses'
           element={<HouseView />}
         />
         <Route
           path='/add-review'
           element={<AddReview />}
         />
+        <Route
+          path={`/houses/:houseId`}
+          element={<HouseView allHouses={allHouses} />}
+        >
+        </Route>
 
       </Routes>
     </div>

@@ -7,12 +7,12 @@ const NavBar = () => {
     <div>
     <Menu>
       <Menu.Item>
-        <NavLink to="/">
+        <NavLink to="/houses">
           Home
         </NavLink>
       </Menu.Item>
       <Menu.Item>
-        <NavLink to="/house">
+        <NavLink to="/houses">
           House List
         </NavLink>
       </Menu.Item>
