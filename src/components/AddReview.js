@@ -1,21 +1,23 @@
 import React, {useState} from 'react'
 
 function AddReview ({addReviewer, house_id}) {
-    const [author, authorChanger] = useState("")
-    const [body, bodyChanger] = useState("")
-    const [stars, starsChanger] = useState("")
+    const [user_id, setUser_Id] = useState("")
+    const [text, setText] = useState("")
+    const [rating, setRating] = useState("")
 
     function submitHandler(e) {
         e.preventDefault()
 
         const newReview = {
-            author: author,
-            body: body,
-            stars: stars,
-            house_id: house_id
+            text: text,
+            rating: rating,
+            user_id: user_id,
+            //house_id: house_id
         }
 
-        fetch("http://localhost:3000/add-review", {
+        console.log(newReview)
+
+        fetch("http://localhost:9292/reviews", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -23,42 +25,42 @@ function AddReview ({addReviewer, house_id}) {
             body: JSON.stringify(newReview)
         })
         .then(resp => resp.json())
-        .then(data => addReviewer(data))
+        .then(data => console.log(data))
 
-        authorChanger("")
-        bodyChanger("")
-        starsChanger("")
+        setUser_Id("")
+        setText("")
+        setRating("")
     }
 
     return (
         <>
         <h1>Add your review of this house!</h1>
         <form onSubmit={submitHandler}>
-            <label>Name</label>
+            <label>User ID</label>
             <input
                 type="text"
-                name="author"
-                label="author"
-                value={author}
-                onChange={(e) => authorChanger(e.target.value)}
+                name="user_id"
+                label="user_id"
+                value={user_id}
+                onChange={(e) => setUser_Id(e.target.value)}
             />
             <label>Review</label>
             <textarea
                 className="big-input"
                 type="text"
                 rows="3"
-                name="body"
-                label="body"
-                value={body}
-                onChange={(e) => bodyChanger(e.target.value)}
+                name="text"
+                label="text"
+                value={text}
+                onChange={(e) => setText(e.target.value)}
             ></textarea>
             <label>Santas</label> 
             <input
                 type="text"
-                name="santas"
-                label="santas"
-                value={stars}
-                onChange={(e) => starsChanger(e.target.value)}
+                name="rating"
+                label="rating"
+                value={rating}
+                onChange={(e) => setRating(e.target.value)}
             />
             <button type="submit">Submit Review</button>
         </form>
