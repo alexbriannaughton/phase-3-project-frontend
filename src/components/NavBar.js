@@ -6,26 +6,26 @@ const NavBar = () => {
   return (
     <div>
     <Menu>
-      <Menu.item>
+      <Menu.Item>
         <NavLink to="/">
           Home
         </NavLink>
-      </Menu.item>
-      <Menu.item>
+      </Menu.Item>
+      <Menu.Item>
         <NavLink to="/house">
           House List
         </NavLink>
-      </Menu.item>
-      <Menu.item>
+      </Menu.Item>
+      <Menu.Item>
         <NavLink to="/add-house">
           Add A New House
         </NavLink>
-      </Menu.item>
-      <Menu.item>
+      </Menu.Item>
+      <Menu.Item>
         <NavLink to="/add-review">
           Add A New Review
         </NavLink>
-      </Menu.item>
+      </Menu.Item>
     </Menu>
     </div>
   )
