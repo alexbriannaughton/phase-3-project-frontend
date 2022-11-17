@@ -21,7 +21,15 @@ function HouseView() {
 
     function handleClick() {
         setShowForm((showForm) => !showForm);
-      }
+    }
+
+
+    function handleDelete(review){
+         console.log(review)
+        fetch(`http://localhost:9292/reviews/${review.id}`, { method: 'DELETE' })
+        .then((res)=>res.json())
+        .then((data) => handleAddReview())
+    }
 
     function renderHouseView() {
         if (currentHouse.reviews) {
@@ -34,10 +42,15 @@ function HouseView() {
                     {currentHouse.reviews && currentHouse.reviews.map((review) => (
                         <>
                             <p className="review-line-one">{`${review.user.name}: ${review.rating} `}</p>
-                            <p>{`"${review.text}"`}</p>
+                            <p>
+                            <button onClick={e=>handleDelete(review)}>delete</button>
+                            {`"${review.text}"`}</p>
+
+
                         </>
                     ))}
                     <button onClick={handleClick}>leave a review</button>
+
                     {showForm ? <AddReview setShowForm={setShowForm} onAddReview={handleAddReview} currentHouse={currentHouse} /> : null}
                 </div>
             )
@@ -56,4 +69,3 @@ function HouseView() {
 
 
 export default HouseView
-
