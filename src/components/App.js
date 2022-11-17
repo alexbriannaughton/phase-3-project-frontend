@@ -4,11 +4,17 @@ import AddHouse from './AddHouse'
 import HouseView from './HouseView'
 import AddReview from './AddReview'
 import NavBar from './NavBar'
+import Login from './Login'
 import { Route, Routes, useRouteMatch } from "react-router-dom"
 
 function App() {
 
   const [allHouses, setAllHouses] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null)
+
+  
+
+  console.log(currentUser)
 
   useEffect(() => {
     fetch("http://localhost:9292/houses")
@@ -18,7 +24,7 @@ function App() {
 
   return (
     <div className="app">
-      <NavBar/>
+      <NavBar />
       <Routes>
         <Route
           path="/houses"
@@ -39,6 +45,13 @@ function App() {
         <Route
           path={`/houses/:houseId`}
           element={<HouseView allHouses={allHouses} />}
+        >
+        </Route>
+        <Route
+          path="/login"
+          element={<Login 
+            setCurrentUser={setCurrentUser}
+            />}
         >
         </Route>
 
