@@ -45,15 +45,13 @@ function AddReview ({addReviewer, house_id}) {
                 onChange={(e) => setUser_Id(e.target.value)}
             />
             <label>Review</label>
-            <textarea
-                className="big-input"
+            <input
                 type="text"
-                rows="3"
                 name="text"
                 label="text"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-            ></textarea>
+            ></input>
             <label>Santas</label> 
             <input
                 type="text"
