@@ -6,21 +6,32 @@
   text-align: center;
   border: grey solid 1px;
   padding: 1rem;
-  width: 25rem;
-  height: 25rem;
+  width: 30rem;
+  height: 30rem;
   display: inline-grid;
-  margin: 1rem 2rem;
-  box-shadow: 3px 4px #e04b52;
+  margin: 2rem 4rem;
+  box-shadow: 3px 4px 10px #e04b52;
+  transition: all .2s;
+  border-radius: 3%;
+}
+
+.house-card:hover {
+  transform: scale(1.1);
+  box-shadow: 6px 8px 20px #e04b52;
+}
+
+.house-card:active {
+  transform: scale(1);
 }
 
 .house-image {
   justify-self: center;
-  height: 12rem;
+  height: 15rem;
   width: auto;
 }
 
 #houseview-image {
-  height: 30rem;
+  height: 27rem;
 }
 
 .review-line-one {
@@ -67,7 +78,7 @@ body {
 
 /* Create a top navigation bar with a black background color  */
 .topnav {
-  background-color: #333;
+  background-color: rgb(68, 68, 68);
   overflow: hidden;
 }
 
@@ -90,7 +101,7 @@ body {
 /* Create a right-aligned (split) link inside the navigation bar */
 .topnav a.split {
   float: right;
-  background-color: #04AA6D;
+  background-color: #008c59;
   color: white;
 }
 
