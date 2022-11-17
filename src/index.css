@@ -112,3 +112,16 @@ body {
   margin-right: auto;
   width: 50%;
 }
+
+#santa-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  opacity: 100%;
+}
+.off {
+  opacity: 50%;
+}

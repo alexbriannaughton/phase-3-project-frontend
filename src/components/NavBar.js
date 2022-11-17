@@ -1,19 +1,18 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { Menu } from 'semantic-ui-react'
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
   return (
 
-    <div class="topnav">
-      <a href="/houses">Home</a>
-      <a class="center" href="/houses">
+    <div className="topnav">
+      <Link to="/houses">Home</Link>
+      <Link to="/houses" className="center">
         <img src=
           "https://i.imgur.com/J9sdky2.png"
           width="300" height="auto" alt="" />
-      </a>
-      <a href="/add-house" class="split">Add Your House</a>
-      <a href="/login">Login</a>
+      </Link>
+      <Link to="/add-house" className="split">Add Your House</Link>
+      <Link to="/login">Login</Link>
     </div>)
 }
 
