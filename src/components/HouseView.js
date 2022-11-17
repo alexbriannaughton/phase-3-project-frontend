@@ -31,6 +31,26 @@ function HouseView() {
         .then((data) => handleAddReview())
     }
 
+    function handleEdit(review){
+        setShowForm(true)
+    //     fetch(`http://localhost:9292/reviews/${review.id}`, {
+    //     method: 'PATCH',
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     },
+    //     body: {
+    //         JSON.stringify({
+
+
+    //         })
+    //     }
+
+    //  })
+    //     .then((res)=>res.json())
+    //     .then((data) => handleAddReview())
+
+    }
+
     function renderHouseView() {
         if (currentHouse.reviews) {
             return (
@@ -44,6 +64,7 @@ function HouseView() {
                             <p className="review-line-one">{`${review.user.name}: ${review.rating} `}</p>
                             <p>
                             <button onClick={e=>handleDelete(review)}>delete</button>
+                            <button onClick={e=>handleEdit(review)}>edit</button>
                             {`"${review.text}"`}</p>
 
 
