@@ -44,15 +44,13 @@ function AddHouse ({addHouse, house_id}) {
                 onChange={(e) => setName(e.target.value)}
             />
             <label>Location</label>
-            <textarea
-                className="big-input"
+            <input
                 type="text"
-                rows="3"
                 name="location"
                 label="location"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-            ></textarea>
+            ></input>
             <label>Image URL</label> 
             <input
                 type="text"
