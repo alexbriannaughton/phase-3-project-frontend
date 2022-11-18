@@ -14,7 +14,7 @@ function AddHouse ({addHouse, house_id}) {
         const newHouse = {
             name: name,
             location: location,
-            image_link: image_link 
+            image_link: image_link
         }
 
         console.log(newHouse)
@@ -28,7 +28,7 @@ function AddHouse ({addHouse, house_id}) {
         })
         .then(resp => resp.json())
         .then(data => navigate(`/houses/${data.id}`))
-        
+
 
         setName("")
         setLocation("")
@@ -37,7 +37,9 @@ function AddHouse ({addHouse, house_id}) {
 
     return (
         <>
-        <h1>Add your House!</h1>
+
+        <div class = "form" className = "form-box" >
+<h1>Add your House!</h1>
         <form onSubmit={submitHandler}>
             <label>Name</label><br></br>
             <input
@@ -64,10 +66,11 @@ function AddHouse ({addHouse, house_id}) {
                 value={image_link}
                 onChange={(e) => setImage_Link(e.target.value)}
             /><br></br><br></br>
-            <button type="submit">Submit House</button>
+            <button className="submit" type="submit">Submit House</button>
         </form>
+        </div>
         </>
-  
+
     )
     }
 
