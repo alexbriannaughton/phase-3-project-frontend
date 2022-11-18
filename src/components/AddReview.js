@@ -88,7 +88,7 @@ function AddReview({currentUser, onAddReview, currentHouse, setShowForm }) {
                     value={rating}
                     onChange={(e) => setRating(e.target.value)}
                 /><br></br><br></br> */}
-                <label>Santas</label><br></br>
+                <label>Santa Rating:</label><br></br>
                 <div className='rating'>
                     {[...Array(5)].map((santa, index) => {
                         index += 1

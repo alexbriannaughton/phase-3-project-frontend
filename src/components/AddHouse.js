@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
-function AddHouse ({addHouse, house_id}) {
+function AddHouse({ addHouse, house_id }) {
     const [name, setName] = useState("")
     const [location, setLocation] = useState("")
     const [image_link, setImage_Link] = useState("")
@@ -14,7 +14,7 @@ function AddHouse ({addHouse, house_id}) {
         const newHouse = {
             name: name,
             location: location,
-            image_link: image_link
+            image_link: image_link 
         }
 
         console.log(newHouse)
@@ -26,8 +26,8 @@ function AddHouse ({addHouse, house_id}) {
             },
             body: JSON.stringify(newHouse)
         })
-        .then(resp => resp.json())
-        .then(data => navigate(`/houses/${data.id}`))
+            .then(resp => resp.json())
+            .then(data => navigate(`/houses/${data.id}`))
 
 
         setName("")
@@ -36,42 +36,39 @@ function AddHouse ({addHouse, house_id}) {
     }
 
     return (
-        <>
+        <div  className='lights form-box'>
+            <h1>Add your House!</h1>
+            <form onSubmit={submitHandler}>
+                <label>Name</label><br></br>
+                <input
+                    type="text"
+                    name="name"
+                    label="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                /><br></br>
+                <label>Location</label><br></br>
+                <textarea
+                    className="big-input"
+                    type="text"
+                    name="location"
+                    label="location"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                ></textarea><br></br>
+                <label>Image URL</label> <br></br>
+                <input
+                    type="text"
+                    name="image_link"
+                    label="image_link"
+                    value={image_link}
+                    onChange={(e) => setImage_Link(e.target.value)}
+                /><br></br><br></br>
+                <button className='submit' type="submit">Submit House</button>
+            </form>
+            </div>
 
-        <div class = "form" className = "form-box" >
-<h1>Add your House!</h1>
-        <form onSubmit={submitHandler}>
-            <label>Name</label><br></br>
-            <input
-                type="text"
-                name="name"
-                label="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-            /><br></br>
-            <label>Location</label><br></br>
-            <textarea
-                className="big-input"
-                type="text"
-                name="location"
-                label="location"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-            ></textarea><br></br>
-            <label>Image URL</label> <br></br>
-            <input
-                type="text"
-                name="image_link"
-                label="image_link"
-                value={image_link}
-                onChange={(e) => setImage_Link(e.target.value)}
-            /><br></br><br></br>
-            <button className="submit" type="submit">Submit House</button>
-        </form>
-        </div>
-        </>
-
-    )
+            )
     }
 
-export default AddHouse
+            export default AddHouse

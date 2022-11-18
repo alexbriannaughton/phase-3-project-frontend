@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="app">
-      <NavBar />
+      <NavBar setCurrentUser={setCurrentUser} currentUser={currentUser} />
       <Routes>
         <Route
           path="/houses"
