@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 // import { Card } from "semantic-ui-react";
 
 function House({ id, name, image_link, location, house }) {
-
   return (
     <Link to={`/houses/${house.id}`}>
       <div className="house-card">
@@ -16,6 +15,5 @@ function House({ id, name, image_link, location, house }) {
     </Link>
   );
 }
-
 
 export default House;
